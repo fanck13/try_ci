@@ -1,0 +1,18 @@
+# language: c
+
+install:
+    - echo "install"
+
+before_script:
+    - echo "before_script"
+
+script:
+    - cd ${TRAVIS_BUILD_DIR}
+    - make
+    - echo "script"
+
+before_install:
+    - echo "before_install"
+
+after_script:
+    - echo "after_script"
