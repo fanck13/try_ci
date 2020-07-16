@@ -1,4 +1,4 @@
-# language: c
+language: c
 
 install:
     - echo "install"
@@ -7,9 +7,10 @@ before_script:
     - echo "before_script"
 
 script:
-    - cd ${TRAVIS_BUILD_DIR}
+    - cd ${TRAVIS_BUILD_DIR}/C
     - make
-    - echo "script"
+    - ./helloc
+    - echo "Successfully"
 
     
 before_install:

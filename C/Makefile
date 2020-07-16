@@ -1,6 +1,6 @@
-hello:
-	gcc -g -o hello.c
+helloc:
+	gcc -g helloc.c -o helloc
 
-.PHONY
+.PHONY:
 clean:
-	rm hello
+	rm helloc
