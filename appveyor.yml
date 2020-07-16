@@ -1,0 +1,28 @@
+version: 0.0.{build}-{branch}
+
+branches:
+  only:
+    - master
+
+init:
+  - echo "init"
+install: 
+  - echo "install"
+before_build: 
+  - echo "before_build"
+build_script: 
+  - echo "Hello, world"
+after_build: 
+  - echo "Hello, world"
+before_test: 
+  - echo "Hello, world"
+test_script: 
+  - echo "Hello, world"
+after_test: 
+  - echo "Hello, world"
+on_success: 
+  - echo "Hello, world"
+on_failure: 
+  - echo "Hello, world"
+on_finish: 
+  - echo "Hello, world"
