@@ -1,0 +1,46 @@
+# language: c
+
+apt addons:
+cache components:
+
+before_install:
+    - echo "before install "
+install: skip
+
+
+before_script:
+script: 
+    - echo "hello script 1"
+    - echo "hello script 2"
+before_cache:
+
+after_success:
+after_failure:
+before_deploy:
+deploy:
+    skip_cleanup: true
+after_deploy:
+after_script:
+
+
+
+
+
+install:
+    - echo "install"
+    
+before_script:
+    - echo "before_script"
+
+script:
+    - cd ${TRAVIS_BUILD_DIR}/C
+    - make
+    - ./helloc
+    - echo "Successfully"
+
+    
+before_install:
+    - echo "before_install"
+    
+after_script:
+    - echo "after_script"

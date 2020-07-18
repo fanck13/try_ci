@@ -1,20 +1,20 @@
-language: c
+jobs:
+  include:
+    - language: csharp
+      os: windows
+      solution: ./C#/hellocsharp.sln
+      install:
+        - nuget restore C#/hellocsharp.sln
+      script:
+        - msbuild /p:Configuration=Release ./C#/hellocsharp.sln
 
-install:
-    - echo "install"
-    
-before_script:
-    - echo "before_script"
+    - language: python
+      python: 3.8
+      script:
+        - python ./Python/hellopython.py
 
-script:
-    - cd ${TRAVIS_BUILD_DIR}/C
-    - make
-    - ./helloc
-    - echo "Successfully"
-
-    
-before_install:
-    - echo "before_install"
-    
-after_script:
-    - echo "after_script"
+    - language: c
+      os: linux
+      compiler: gcc 
+      script:
+        - gcc ./C/helloc.c -o hello
